@@ -1,0 +1,86 @@
+Find the Minimum Element in an Array.
+
+a. iterative solution to finding the minimum element in an array
+
+i.
+public class cs{
+	public static void main (String [] args) {
+		Scanner sc= new Scanner(System.in);
+		System.out.println("Enter the nummber of Values");
+		int num= sc.nextInt();
+		if (num<=0) {
+			System.out.println("Enter a valid number");
+		return; }
+		int [] arr =new int[num];
+		System.out.println("Enter the array values");
+		for (int i=0;i<num;i++) {
+		arr[i]=sc.nextInt();	
+		}
+		int min=arr[0];
+		for (int i=0;i<num;i++) {
+			if(arr[i]<min) {
+				min=arr[i];
+			}
+		}
+		System.out.println("The Smallest number in the array is :" +min);
+	}
+}
+
+
+ii.
+public class cs{
+	public static int smallestEle(int [] arr) {
+		if(arr ==null || arr.length==0) {
+			throw new IllegalArgumentException("The array is NULL or not Valid");
+		}
+		int num=arr.length;
+		int min=arr[0];
+		for (int i=0;i<num;i++) {
+			if(arr[i] < min ) {
+				min =arr[i];
+			}
+		}
+		return min;
+	}
+	public static void main(String[] args) {
+		Scanner sc =new Scanner(System.in);
+		System.out.println("Enter the No. of Elements in the array");
+		int num = sc.nextInt();
+		if (num<=0) {
+			System.out.println("Please enter a valid number");
+		}
+		int[] arr = new int[num];
+		System.out.println("Enter the Elements in the array");
+		for(int i=0;i<num;i++) {
+		arr[i]=sc.nextInt();	
+		}
+		System.out.println("The smallest element in the array is :"+smallestEle(arr));
+	}
+}
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+b. Recursive solution to finding the minimum element in an array
+
+public class pravs{
+	public static int smallestEle(int [] arr ,int index) {
+		if(index==arr.length-1) {
+			return arr[index];
+		}
+		int minValue = smallestEle(arr,index+1);
+		return Math.min(arr[index],index+1);
+		}
+	public static void main(String[] args) {
+		Scanner sc =new Scanner(System.in);
+		System.out.println("Enter the No. of Elements in the array");
+		int num = sc.nextInt();
+		if (num<=0) {
+			System.out.println("Please enter a valid number");
+		}
+		int[] arr = new int[num];
+		System.out.println("Enter the Elements in the array");
+		for(int i=0;i<num;i++) {
+		arr[i]=sc.nextInt();	
+		}
+		int scs = smallestEle(arr,0);
+		System.out.println("The smallest element in the array is :"+scs);
+	}
+}
