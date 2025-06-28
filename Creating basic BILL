@@ -1,0 +1,36 @@
+Generate a Bill for Vohra's Purchase
+Vohra went to a movie with his friends and bought pizzas, puffs, and cool drinks during the break. Given the prices
+Rs. 100 per pizza
+Rs. 20 per puff
+Rs. 10 per cooldrink
+Generate a bill for what Vohra has bought.
+#Sample Input 1
+Enter the number of pizzas bought: 10
+Enter the number of puffs bought: 12
+Enter the number of cool drinks bought: 5
+Sample Output 1
+Number of pizzas: 10
+Number of puffs: 12
+Number of cooldrinks: 5
+Total price: 1290
+
+------------------------------------------------------------------------------------------
+public class cs{
+	
+	public static void main(String[] args) {
+		Scanner sc= new Scanner(System.in);
+		System.out.println("Enter the Number of Pizza's bought :");
+		int pizzaBought = sc.nextInt();
+		System.out.println("Enter the Number of puff's bought :");
+		int puffBought =sc.nextInt();
+		System.out.println("Enter the number of cooldrink's bought :");
+		int cooldrinkBought =sc.nextInt();
+		
+		int bill = (pizzaBought*100) + (puffBought*20) + (cooldrinkBought*10);
+		System.out.println("Nubmer of pizzas :"+ pizzaBought);
+		System.out.println("Nubmer of Puffs :"+ puffBought);
+		System.out.println("Nubmer of cooldrinks :"+ cooldrinkBought);
+		System.out.println("Total Price :"+ bill);
+	}
+}
+
