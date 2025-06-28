@@ -1,0 +1,70 @@
+Check Palindrome or Not   (STRING)
+
+a.USING STRING BUILDER
+
+public class cs{
+	public static void main(String[] args) {
+		String c = "charahc";
+		String reversed=new StringBuilder(c).reverse().toString();
+		System.out.println((c.equals(reversed))?"Palindrome":"Not Palindrome");
+	}
+}
+
+
+b.Iterative Approach or Two Pointer Approach
+
+public class cs{
+	public static boolean isPalindrome(String str) {
+		str=str.replaceAll("\\s", "").toLowerCase();
+		int start=0;
+		int end=str.length()-1;
+		
+		while(start<end) {
+			if(str.charAt(start) != str.charAt(end)) {
+				return false;
+			}
+			start++;
+			end--;
+		}
+		return true;
+		
+	}
+	public static void main(String[] args) {
+		Scanner sc = new Scanner(System.in);
+		System.out.println("Enter the String");
+		String str = sc.nextLine();
+		
+		if(isPalindrome(str)) {
+			System.out.println(str +" is a palindrome");
+		} else {
+			System.out.println(str +" is not a palindrome");
+		}
+	}
+}
+
+c.Recursive Approach
+package cs;
+import java.util.*;
+
+public class pravs{
+	public static boolean isPalindrome(String str , int start, int end) {
+		if(start>end) {
+			return true;
+		}
+			if(str.charAt(start) != str.charAt(end)) {
+				return false;
+			}
+		return isPalindrome(str,start+1,end-1);
+	}
+	public static void main(String[] args) {
+		Scanner sc = new Scanner(System.in);
+		System.out.println("Enter the String");
+		String str = sc.nextLine();
+		
+		str=str.replace("[^ a-zA-Z0-9]", "").toLowerCase();   // optional
+		System.out.println(isPalindrome(str,0,str.length()-1)?"Palindrome":"Not a Palindrome");   // ternary operator
+		
+	}
+}
+
+
