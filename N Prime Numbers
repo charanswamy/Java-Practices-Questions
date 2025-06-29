@@ -3,7 +3,7 @@ Printing Prime Numbers of N
 package cs;
 import java.util.*;
 
-public class pravs{
+public class cs{
 	public static boolean isPrime(int num) {
 		if(num<=0) {
 			return false;
