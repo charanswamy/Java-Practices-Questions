@@ -1,0 +1,36 @@
+
+#DATA STRUCTURES AND ALGORITHMS
+
+LINEAR SEARCH 
+
+public class cs{
+	public static int linearSearch(int[] arr, int x) {
+		int nm =arr.length;
+		for(int i=0;i<nm;i++) {
+			if(arr[i]==x) {
+				return i;
+			}
+		}
+		return -1;}
+	public static void main (String[] args) {
+		Scanner sc = new Scanner(System.in);
+		System.out.println("Enter the No. of elements in an array");
+		int num = sc.nextInt();
+		if(num<=0) {
+			System.out.println("Enter a valid number..!!!");
+		return; }
+		int[] arr = new int[num];
+		System.out.println("Enter the elements in the array");
+		for (int i=0;i<num;i++) {
+			arr[i]=sc.nextInt();
+		}
+		System.out.println("Enter the searching value");
+		int x=sc.nextInt();
+		int linear=linearSearch(arr,x);
+		if(linear==-1) {
+			System.out.println("Element is not present in the array..");
+		} else {
+			System.out.println("Element is present at index "+linear);
+		}
+	}
+}
